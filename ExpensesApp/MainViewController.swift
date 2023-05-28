@@ -9,6 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    
     let info: InfoView = {
         let view = InfoView()
         view.backgroundColor = .white
@@ -31,6 +32,12 @@ class MainViewController: UIViewController {
         return view
     }()
     
+    let hview : HeaderView = {
+        let view = HeaderView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let sview : SuggestionView = {
         let view = SuggestionView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +49,6 @@ class MainViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.layer.cornerRadius = 10
         table.rowHeight = UITableView.automaticDimension
-        table.largeContentTitle = "Orçamento"
         table.register(CustomTableViewCell.self, forCellReuseIdentifier: "CustomCell")
         return table
     }()
@@ -66,12 +72,19 @@ class MainViewController: UIViewController {
         let expenses = ExpensesViewController()
         let navigationController = UINavigationController(rootViewController: expenses)
         present(navigationController, animated: true)
+//        let expenses : ExpensesViewController = ExpensesViewController()
+//        expenses.modalPresentationStyle = .pageSheet
+//        self.navigationController?.pushViewController(expenses, animated: true)
     }
     
     @objc private func tapValueButton() {
         let value = RevenueViewController()
         let navigationController = UINavigationController(rootViewController: value)
         present(navigationController, animated: true)
+//        let value : RevenueViewController = RevenueViewController()
+//        self.navigationController?.modalPresentationStyle = .pageSheet
+//        self.navigationController?.present(value, animated: true)
+        
     }
     
     
@@ -81,6 +94,7 @@ class MainViewController: UIViewController {
         view.addSubview(productTableView)
         view.addSubview(lbuttonView)
         view.addSubview(rbuttonView)
+        view.addSubview(hview)
         view.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.937, alpha: 1)
     }
     
@@ -141,28 +155,16 @@ extension MainViewController : UITableViewDelegate , UITableViewDataSource {
         cell.product = products[indexPath.row]
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Orçamento"
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let header = view as? UITableViewHeaderFooterView else { return }
-            header.textLabel?.textColor = .black
-            header.textLabel?.font = UIFont(name: "Roboto-Bold", size: 22)
-            header.textLabel?.frame = header.bounds
-    }
-    
-    
+        
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//
-//
-//        }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        return hview
+
+       }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        return 100

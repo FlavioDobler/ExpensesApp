@@ -69,9 +69,5 @@ class LeftButtonView: UIView {
             leftLabel.bottomAnchor.constraint(equalTo: backViewGreen.bottomAnchor,constant: -14.26)
         
         ])
-        
-        
-        
-        
     }
 }

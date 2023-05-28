@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AAB5DC22A21960700F19743 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB5DC12A21960700F19743 /* HeaderView.swift */; };
 		3AD626382A09D36F00E6BC79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD626372A09D36F00E6BC79 /* AppDelegate.swift */; };
 		3AD6263A2A09D36F00E6BC79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD626392A09D36F00E6BC79 /* SceneDelegate.swift */; };
 		3AD6263C2A09D36F00E6BC79 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6263B2A09D36F00E6BC79 /* MainViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AAB5DC12A21960700F19743 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3AD626342A09D36F00E6BC79 /* ExpensesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpensesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD626372A09D36F00E6BC79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD626392A09D36F00E6BC79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				3AD6264D2A09E1D400E6BC79 /* InfoView.swift */,
 				3AD626822A18C4B000E6BC79 /* LeftButtonView.swift */,
 				3AD626842A18EA7000E6BC79 /* RightButtonView.swift */,
+				3AAB5DC12A21960700F19743 /* HeaderView.swift */,
 				3AFCFD272A1D091600CBAD27 /* NavBar.swift */,
 			);
 			name = Main;
@@ -269,6 +272,7 @@
 				3AD626582A0C50B100E6BC79 /* Products.swift in Sources */,
 				3AD6263A2A09D36F00E6BC79 /* SceneDelegate.swift in Sources */,
 				3AD626792A146E4E00E6BC79 /* ExpensesViewController.swift in Sources */,
+				3AAB5DC22A21960700F19743 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

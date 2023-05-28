@@ -60,7 +60,15 @@ class RevenueViewController: UIViewController {
         }
     }
     
+    @objc private func tapBackButton(){
+        let value = MainViewController()
+        let navigationController = UINavigationController(rootViewController: value)
+        self.navigationController?.pushViewController(value, animated: true)
+    }
+    
     func navCustomization() {
+        
+        
         navigationItem.title = "Nova Receita"
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Roboto-Bold", size: 28)!]
@@ -76,6 +84,8 @@ class RevenueViewController: UIViewController {
   
     private func configureNavItems(){
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(tapSaveButton))
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(tapBackButton))
         
         if let font = UIFont(name: "Roboto-Regular", size: 16) {
             UIBarButtonItem.appearance().setTitleTextAttributes(

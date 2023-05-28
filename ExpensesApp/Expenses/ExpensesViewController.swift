@@ -39,6 +39,12 @@ class ExpensesViewController: UIViewController {
         }
     }
     
+    @objc private func tapBackButton(){
+        let main : MainViewController = MainViewController()
+        main.modalPresentationStyle = .pageSheet
+        self.navigationController?.pushViewController(main, animated: true)
+    }
+    
     func layout(){
         
         NSLayoutConstraint.activate([
@@ -52,7 +58,6 @@ class ExpensesViewController: UIViewController {
     
     func navCustomization() {
         navigationItem.title = "Nova Despesa"
-        
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Roboto-Bold", size: 28)!]
         
         let appearance = UINavigationBarAppearance()
@@ -64,8 +69,19 @@ class ExpensesViewController: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        if self.isMovingFromParent {
+            let alert = UIAlertController(title: "Deseja Sair?", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert,animated: true,completion: nil)
+            }
+        }
+    
+    
     private func configureNavItems(){
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(tapSaveButton))
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(tapBackButton))
         
         if let font = UIFont(name: "Roboto-Regular", size: 16) {
             UIBarButtonItem.appearance().setTitleTextAttributes(
@@ -78,4 +94,8 @@ class ExpensesViewController: UIViewController {
         }
         
     }
+}
+
+extension ExpensesViewController : UINavigationControllerDelegate {
+   
 }

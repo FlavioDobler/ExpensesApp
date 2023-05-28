@@ -68,5 +68,4 @@ class RightButtonView: UIView {
             rightLabel.bottomAnchor.constraint(equalTo: backViewRed.bottomAnchor,constant: -14.26)
         ])
     }
-    
 }
