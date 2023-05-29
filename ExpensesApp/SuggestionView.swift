@@ -64,7 +64,6 @@ class SuggestionView : UIView {
             tittleLabel.topAnchor.constraint(equalTo: backgroundSugestionView.topAnchor,constant: 22),
             tittleLabel.leadingAnchor.constraint(equalTo: backgroundSugestionView.leadingAnchor,constant: 138.4),
             tittleLabel.trailingAnchor.constraint(equalTo: backgroundSugestionView.trailingAnchor,constant: 130),
-          //  tittleLabel.bottomAnchor.constraint(equalTo: infoLabel.topAnchor,constant: -4),
                 
             infoLabel.topAnchor.constraint(equalTo: backgroundSugestionView.topAnchor, constant: 22),
             infoLabel.leadingAnchor.constraint(equalTo: backgroundSugestionView.leadingAnchor,constant: 12),

@@ -61,16 +61,14 @@ class RevenueViewController: UIViewController {
     }
     
     @objc private func tapBackButton(){
-        let value = MainViewController()
-        let navigationController = UINavigationController(rootViewController: value)
-        self.navigationController?.pushViewController(value, animated: true)
+        self.dismiss(animated: true,completion: nil)
     }
     
     func navCustomization() {
-        
-        
+       
         navigationItem.title = "Nova Receita"
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
+
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Roboto-Bold", size: 28)!]
        
         let appearance = UINavigationBarAppearance()

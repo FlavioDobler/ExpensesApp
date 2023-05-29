@@ -12,7 +12,16 @@ class ExpensesViewController: UIViewController {
     let expView : ExpensesView = {
         let view = ExpensesView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         return view
+    }()
+    
+    lazy var backButton : UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "Vector"), for: .normal)
+        button.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
+        return button
     }()
     
     override func viewDidLoad() {
@@ -27,6 +36,7 @@ class ExpensesViewController: UIViewController {
     
     func setup(){
         view.addSubview(expView)
+        view.addSubview(backButton)
     }
     
     @objc private func tapSaveButton(){
@@ -40,9 +50,10 @@ class ExpensesViewController: UIViewController {
     }
     
     @objc private func tapBackButton(){
-        let main : MainViewController = MainViewController()
-        main.modalPresentationStyle = .pageSheet
-        self.navigationController?.pushViewController(main, animated: true)
+//        let main : MainViewController = MainViewController()
+//        main.modalPresentationStyle = .pageSheet
+//        self.navigationController?.pushViewController(main, animated: true)
+        self.dismiss(animated: false, completion: nil)
     }
     
     func layout(){
@@ -58,6 +69,9 @@ class ExpensesViewController: UIViewController {
     
     func navCustomization() {
         navigationItem.title = "Nova Despesa"
+        navigationController?.navigationBar.prefersLargeTitles = true
+
+        
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Roboto-Bold", size: 28)!]
         
         let appearance = UINavigationBarAppearance()
@@ -81,7 +95,7 @@ class ExpensesViewController: UIViewController {
     private func configureNavItems(){
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(tapSaveButton))
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(tapBackButton))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         
         if let font = UIFont(name: "Roboto-Regular", size: 16) {
             UIBarButtonItem.appearance().setTitleTextAttributes(

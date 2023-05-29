@@ -72,18 +72,14 @@ class MainViewController: UIViewController {
         let expenses = ExpensesViewController()
         let navigationController = UINavigationController(rootViewController: expenses)
         present(navigationController, animated: true)
-//        let expenses : ExpensesViewController = ExpensesViewController()
-//        expenses.modalPresentationStyle = .pageSheet
-//        self.navigationController?.pushViewController(expenses, animated: true)
+
     }
     
     @objc private func tapValueButton() {
         let value = RevenueViewController()
         let navigationController = UINavigationController(rootViewController: value)
         present(navigationController, animated: true)
-//        let value : RevenueViewController = RevenueViewController()
-//        self.navigationController?.modalPresentationStyle = .pageSheet
-//        self.navigationController?.present(value, animated: true)
+
         
     }
     
@@ -161,9 +157,7 @@ extension MainViewController : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         return hview
-
        }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
