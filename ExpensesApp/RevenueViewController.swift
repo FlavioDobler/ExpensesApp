@@ -24,7 +24,13 @@ class RevenueViewController: UIViewController {
         return view
     }()
     
-    
+    lazy var backButton : UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "Vector"), for: .normal)
+        button.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +43,9 @@ class RevenueViewController: UIViewController {
     
     func setup(){
         view.addSubview(revView)
+        view.addSubview(backButton)
     }
-
+    
     func layout(){
         
         NSLayoutConstraint.activate([
@@ -83,7 +90,7 @@ class RevenueViewController: UIViewController {
     private func configureNavItems(){
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(tapSaveButton))
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(tapBackButton))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         
         if let font = UIFont(name: "Roboto-Regular", size: 16) {
             UIBarButtonItem.appearance().setTitleTextAttributes(

@@ -50,9 +50,6 @@ class ExpensesViewController: UIViewController {
     }
     
     @objc private func tapBackButton(){
-//        let main : MainViewController = MainViewController()
-//        main.modalPresentationStyle = .pageSheet
-//        self.navigationController?.pushViewController(main, animated: true)
         self.dismiss(animated: false, completion: nil)
     }
     
