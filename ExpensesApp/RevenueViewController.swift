@@ -52,8 +52,6 @@ class RevenueViewController: UIViewController {
             revView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 32),
             revView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16),
             revView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -16)
-            
-        
         ])
     }
     

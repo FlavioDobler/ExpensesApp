@@ -55,6 +55,7 @@ class CustomTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
+        label.numberOfLines = 1
         label.font = UIFont(name: "Roboto-Bold", size: 16)
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         return label
@@ -134,8 +135,7 @@ class CustomTableViewCell: UITableViewCell {
             containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             productLabel.topAnchor.constraint(equalTo: containerView.topAnchor,constant: 6),
-            productLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            productLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,constant: -240),
+            productLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,constant: 16),
             productLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,constant: -39),
             
             progressBar.topAnchor.constraint(equalTo: productLabel.bottomAnchor,constant: 3),
@@ -144,7 +144,7 @@ class CustomTableViewCell: UITableViewCell {
             progressBar.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,constant: -30),
 
             symbolLabel.topAnchor.constraint(equalTo: progressBar.bottomAnchor,constant: 4),
-            symbolLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            symbolLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,constant: 16),
             symbolLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,constant: -12),
 
             priceLabel.leadingAnchor.constraint(equalTo: symbolLabel.trailingAnchor, constant: 2),

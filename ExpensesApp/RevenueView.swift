@@ -18,8 +18,6 @@ class RevenueView: UIView {
         categoryTextField.delegate = self
     }
     
-   
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
